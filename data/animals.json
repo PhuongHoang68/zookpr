@@ -68,7 +68,18 @@
       "name": "Tamara",
       "species": "Tiger",
       "diet": "carnivore",
-      "personalityTraits": ["hungry"]
+      "personalityTraits": [
+        "hungry"
+      ]
+    },
+    {
+      "name": "Larry",
+      "species": "lemur",
+      "diet": "omnivore",
+      "personalityTraits": [
+        "hungry"
+      ],
+      "id": "10"
     }
   ]
 }
