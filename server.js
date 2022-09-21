@@ -70,6 +70,11 @@ app.get('/api/animals/:id', (req, res)=> {
 
 //route to post user's input
 app.post('/api/animals', (req, res) => {
+    // parse incoming string or array data
+    app.use(express.urlencoded({ extended: true }));
+    // parse incoming JSON data
+    app.use(express.json());
+
     //req body is where our incoming content will be
     console.log(req.body);
     res.json(req.body);
