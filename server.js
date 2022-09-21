@@ -43,7 +43,10 @@ function filterByQuery(query, animalsArray) {
     return filteredResults;
   }
 
-
+  function findById(id, animalsArray) {
+    const result = animalsArray.filter(animal => animal.id === id)[0];
+    return result;
+  }
 
 //route to find an animal array, a wide set of data
 app.get('/api/animals', (req, res) => {
