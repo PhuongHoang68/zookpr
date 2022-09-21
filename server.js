@@ -59,9 +59,13 @@ app.get('/api/animals', (req, res) => {
 
 
 //route to find an animal by ID, much more specific
-app.get('/api/animals/id', (req, res)=> {
-    const result = findById(req.paremts.id, animals);
-    res.json(result);
+app.get('/api/animals/:id', (req, res)=> {
+    const result = findById(req.params.id, animals);
+    if (result) {
+        res.json(result);
+    } else {
+        res.send(404);
+    }
 });
 
 app.listen(PORT, () =>{
