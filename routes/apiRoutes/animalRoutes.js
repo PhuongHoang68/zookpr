@@ -4,7 +4,7 @@ const router = require('express').Router();
 
 
 //route to find an animal array, a wide set of data
-route.get('/animals', (req, res) => {
+router.get('/animals', (req, res) => {
     let results = animals;
     if (req.query) {
         results = filterByQuery(req.query, results);
@@ -14,7 +14,7 @@ route.get('/animals', (req, res) => {
 
 
 //route to find an animal by ID, much more specific
-route.get('/animals/:id', (req, res)=> {
+router.get('/animals/:id', (req, res)=> {
     const result = findById(req.params.id, animals);
     if (result) {
         res.json(result);
@@ -24,7 +24,7 @@ route.get('/animals/:id', (req, res)=> {
 });
 
 //route to post user's input
-route.post('/animals', (req, res) => {
+router.post('/animals', (req, res) => {
     //setting animal id by the next index available, to prevent double of them
     req.body.id= animals.length.toString()
     
