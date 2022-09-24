@@ -5,7 +5,7 @@ const {
     createNewZookeeper, 
     validateZookeeper,
 } = require('../lib/zookeepers.js');
-const {zookeepers} = require('../data/animals.json');
+const {zookeepers} = require('../data/zookeepers.json');
 
 
 jest.mock('fs');
@@ -83,7 +83,7 @@ const startingZookeepers = [
     }
 ]
 
-const updatedZookepers = filterbyQuery({ favoriteAnimal: "Cat"}, startingZookeepers);
+const updatedZookepers = filterByQuery({ favoriteAnimal: "Cat"}, startingZookeepers);
 expect(updatedZookeepers.length).toEqual(1);
 }
 );
