@@ -24,14 +24,14 @@ test ("creates a zookeeper", ()=> {
 test ("validate zookeeper", ()=> {
     const zookeeperOne = {
         name: "Josh",
-        age: "22",
+        age: 22,
         favoriteAnimal: "cat"
 
     };
 
     const zookeeperTwo = {
         name: "Aubrey",
-        age: "26"
+        age: 26
 
     };
 
@@ -67,23 +67,24 @@ test ("finds zookeeper by ID", ()=> {
 }
 );
 
-test ("filters by favorite animal", ()=> {
-const startingZookeepers = [
-    {
-        id: "10",
-        name: "Emmilu",
-        age: 28,
-        favoriteAnimal: "Duckbilled Platypus",
-    },
-    {
-        id: "70",
-        name: "Emy",
-        age: 29,
-        favoriteAnimal: "Cat",
-    }
-]
+test("filters by query", () => {
+    const startingZookeepers = [
+      {
+        id: "2",
+        name: "Raksha",
+        age: 31,
+        favoriteAnimal: "penguin",
+      },
+      {
+        id: "3",
+        name: "Isabella",
+        age: 67,
+        favoriteAnimal: "bear",
+      },
+    ];
+  
+    const updatedZookeepers = filterByQuery({ age: 31 }, startingZookeepers);
+  
+    expect(updatedZookeepers.length).toEqual(1);
+  });
 
-const updatedZookepers = filterByQuery({ favoriteAnimal: "Cat"}, startingZookeepers);
-expect(updatedZookeepers.length).toEqual(1);
-}
-);

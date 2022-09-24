@@ -1,5 +1,7 @@
 const $animalForm = document.querySelector('#animal-form');
 const $zookeperForm = document.querySelector('#zookeeper-form');
+
+//ANIMAL PORTION
 const handleAnimalFormSubmit = event => {
   event.preventDefault();
 
@@ -28,8 +30,6 @@ const handleAnimalFormSubmit = event => {
 
 };
 
-$animalForm.addEventListener('submit', handleAnimalFormSubmit);
-
 fetch('/api, animals', {
   method: 'POST',
   headers: {
@@ -49,7 +49,11 @@ fetch('/api, animals', {
   alert('Thanks for adding your animal');
 });
 
-//get zookeper data and organize it
+
+
+
+
+//ZOOKEEPER PORTION
 const handleZookeeperFormSubmit = event => {
   event.preventDefault();
 
@@ -81,3 +85,5 @@ const handleZookeeperFormSubmit = event => {
 };
 
 $zookeeperForm.addEventListener('submit', handleZookeeperFormSubmit);
+
+$animalForm.addEventListener('submit', handleAnimalFormSubmit);
