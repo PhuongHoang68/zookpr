@@ -16,6 +16,7 @@ app.use(express.static('public'));
     // parse incoming JSON data
     app.use(express.json());
 
+    //creating endpoints, which is pointed towards the files on line 9&10
     app.use('/api', apiRoutes);
     app.use('/', htmlRoutes);
 
